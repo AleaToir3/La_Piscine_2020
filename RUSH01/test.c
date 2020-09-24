@@ -6,7 +6,7 @@
 /*   By: ymiraoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 17:18:20 by ymiraoui          #+#    #+#             */
-/*   Updated: 2020/09/20 20:01:49 by ymiraoui         ###   ########.fr       */
+/*   Updated: 2020/09/20 23:34:40 by ababaei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,12 @@ int	x2checkline(int **board, int row)
 	return (1);
 }
 
-int	y1checkline(int **board)
+int	y1checkline(int **board, int y)
 {
 	int *stock;
 
+	if (y != 4)
+		return (1);
 	stock = 0;
 	stock[0] = 1;
 	stock[1] = 1;
@@ -74,11 +76,6 @@ int	y1checkline(int **board)
 			{
 				stock[2] = board[stock[0]][stock[1]];
 				stock[3]++;
-			}
-			if (board[stock[0]][stock[1]] == 0 && stock[2] < 4)
-			{
-				stock[3]++;
-				stock[2] = stock[2]++;
 			}
 		}
 		if (stock[3] != stock[4])
@@ -104,13 +101,15 @@ int	checkdouble(int **board, int row)
 		}
 		x++;
 	}
-	return (0);
+	return (1);
 }
 
-int	y2checkline(int **board)
+int	y2checkline(int **board, int y)
 {
 	int *stock;
 
+	if (y != 4)
+		return (1);
 	stock = 0;
 	stock[0] = 5;
 	stock[1] = 1;
@@ -123,11 +122,6 @@ int	y2checkline(int **board)
 			{
 				stock[2] = board[stock[0]][stock[1]];
 				stock[3]++;
-			}
-			if (board[stock[0]][stock[1]] == 0 && stock[2] < 4)
-			{
-				stock[3]++;
-				stock[2] = stock[2]++;
 			}
 		}
 		if (stock[3] != stock[4])

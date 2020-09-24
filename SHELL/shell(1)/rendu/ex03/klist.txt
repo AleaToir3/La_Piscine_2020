@@ -1,0 +1,5 @@
+Credentials cache: API:CABA522E-F81D-4C26-A91D-35AF59677CF3
+        Principal: ymiraoui@42.FR
+
+  Issued                Expires               Principal
+Sep  7 15:07:08 2020  Sep 14 15:07:08 2020  krbtgt/42.FR@42.FR
